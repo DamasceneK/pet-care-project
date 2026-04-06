@@ -7,4 +7,4 @@ Team Members:
 - Laura Ibanez Diaz
 - Jennifer Perez
 - Damascene Kalisa
-- Logan Simila
+  

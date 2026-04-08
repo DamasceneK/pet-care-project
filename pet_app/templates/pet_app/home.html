@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Care System</title>
+</head>
+<body>
+    <h1>Pet Care Management System</h1>
+
+    <a href="/add-pet/">Add Pet</a> |
+    <a href="/add-appointment/">Add Appointment</a>
+
+    <h2>Pets</h2>
+    <ul>
+        {% for pet in pets %}
+            <li>{{ pet.name }} - {{ pet.species }} - Age: {{ pet.age }}</li>
+        {% empty %}
+            <li>No pets yet</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Appointments</h2>
+    <ul>
+        {% for appointment in appointments %}
+            <li>{{ appointment.pet.name }} - {{ appointment.appointment_date }}</li>
+        {% empty %}
+            <li>No appointments yet</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

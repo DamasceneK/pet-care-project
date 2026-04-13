@@ -34,3 +34,21 @@ def add_appointment(request):
         form = AppointmentForm()
 
     return render(request, 'pet_app/add_appointment.html', {'form': form})
+def home(request):
+    pets = Pet.objects.all()
+    appointments = Appointment.objects.all()
+
+    # 👇 collections requirement
+    summary = {
+        'total_pets': len(pets),
+        'total_appointments': len(appointments)
+    }
+
+    pet_names = [pet.name for pet in pets]  # list example
+
+    return render(request, 'pet_app/home.html', {
+        'pets': pets,
+        'appointments': appointments,
+        'summary': summary,
+        'pet_names': pet_names
+    })

@@ -1,33 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Pet Care System</title>
-</head>
-<body>
-    <h1>Pet Care Management System</h1>
+{% extends 'base.html' %}
+{% load static %}
 
-    <a href="/add-pet/">Add Pet</a> |
-    <a href="/add-appointment/">Add Appointment</a>
+{% block content %}
 
-    <h2>Pets</h2>
-    <ul>
-        {% for pet in pets %}
-            <li>{{ pet.name }} - {{ pet.species }} - Age: {{ pet.age }}</li>
-        {% empty %}
-            <li>No pets yet</li>
-        {% endfor %}
-    </ul>
+<link rel="stylesheet" href="{% static 'pet_app/style.css' %}">
 
-    <h2>Appointments</h2>
-    <ul>
-        {% for appointment in appointments %}
-            <li>{{ appointment.pet.name }} - {{ appointment.appointment_date }}</li>
-        {% empty %}
-            <li>No appointments yet</li>
-        {% endfor %}
-    </ul>
-    <h3>Summary</h3>
+<a href="/add-pet/">Add Pet</a> |
+<a href="/add-appointment/">Add Appointment</a>
+
+<h2>Pets</h2>
+<ul>
+    {% for pet in pets %}
+        <li>{{ pet.name }} - {{ pet.species }} - Age: {{ pet.age }}</li>
+    {% empty %}
+        <li>No pets yet</li>
+    {% endfor %}
+</ul>
+
+<h2>Appointments</h2>
+<ul>
+    {% for appointment in appointments %}
+        <li>{{ appointment.pet.name }} - {{ appointment.appointment_date }}</li>
+    {% empty %}
+        <li>No appointments yet</li>
+    {% endfor %}
+</ul>
+
+<h3>Summary</h3>
 <p>Total Pets: {{ summary.total_pets }}</p>
 <p>Total Appointments: {{ summary.total_appointments }}</p>
-</body>
-</html>
+
+{% endblock %}

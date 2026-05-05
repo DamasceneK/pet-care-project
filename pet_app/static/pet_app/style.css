@@ -6,3 +6,14 @@ body {
 h1 {
     color: darkblue;
 }
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
